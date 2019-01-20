@@ -244,6 +244,9 @@ result
 #### 9.add a synopsis to "The Hobbit: An Unexpected Journey"   
 ```sql
  db.movies.update({ "_id" : ObjectId("5c43e82bcb79af652b10b76b")},{"title":"The Hobbit: An Unexpected Journey","writer":"J.R.R. Tolkein","year":2012,"franchise":"The Hobbit","synopsis":"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."})
+#### 9.add a synopsis to "The Hobbit: An Unexpected Journey"
+```sql
+ db.movies.update({ "_id" : ObjectId("5c43e82bcb79af652b10b76b")},{"title":"The Hobbit: An Unexpected Journey","writer":"J.R.R. Tolkein","year":2012,"franchise":"The Hobbit","synopsis":"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."})
 ```
 result
 ```sql
