@@ -338,7 +338,22 @@ result
         "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
 }
 ```
-#### 14.
+#### 14.find all movies that have a synopsis that contains the word "Bilbo" and not the word "Gandalf"
+```sql
+db.movies.find({synopsis:{'$regex' : '^((?!Gandalf).)*$', '$options' : 'i',},synopsis:{$regex:'hobbit.*'}}).pretty()
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e82bcb79af652b10b76b"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+```
+#### 15.find all movies that have a synopsis that contains the word "dwarves" or "hobbit"
 ```sql
 db.movies.find({$or:[{"synopsis":{$regex:'dwarves.*'}},{"synopsis":{$regex:'hobbit.*'}} ]}).pretty()
 ```
