@@ -274,7 +274,25 @@ result
         "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
 }
 ```
- 
+#### 11.add an actor named "Samuel L. Jackson" to the movie "Pulp Fiction"
+```sql
+  db.movies.update({ "_id" : ObjectId("5c43e77ecb79af652b10b76a")},{"title":"Pulp Fiction","writer":"Quentin Tarantino","year":1994,"actors": ["John Travolta","Uma Thurman","Samuel L. Jackson"]})
+  ```
+  result
+  ```sql
+  {
+        "_id" : ObjectId("5c43e77ecb79af652b10b76a"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman",
+                "Samuel L. Jackson"
+        ]
+}
+```
+  
 
 
 
