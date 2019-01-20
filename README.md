@@ -82,5 +82,34 @@ result:
 }
 { "_id" : ObjectId("5c43eb3fcb79af652b10b770"), "title" : "Avatar" }
 ```
+#### 4.get all documents with writer set to "Quentin Tarantino"
+```sql
+ db.movies.find({"writer":{$regex:'Quentin Tarantino.*'}}).pretty()
+```
+result:
+```sql
+{
+        "_id" : ObjectId("5c43e77ecb79af652b10b76a"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : "1994",
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c43e82bcb79af652b10b76b"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : "2009",
+        "actors" : [
+                " Brad Pitt",
+                "Diane Kruger",
+                "Eli Roth"
+        ]
+}
+```
+
 
 
