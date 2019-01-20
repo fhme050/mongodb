@@ -1,6 +1,6 @@
 # mongodb
 *mongodb
-```NoSql
+```sql
 db.createCollection("countryInfo")
 ```
 
