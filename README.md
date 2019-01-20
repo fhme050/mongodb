@@ -92,7 +92,7 @@ result:
         "_id" : ObjectId("5c43e77ecb79af652b10b76a"),
         "title" : "Pulp Fiction",
         "writer" : "Quentin Tarantino",
-        "year" : "1994",
+        "year" : 1994,
         "actors" : [
                 "John Travolta",
                 "Uma Thurman"
@@ -169,8 +169,32 @@ db.movies.find({"franchise":{$regex:'The Hobbit.*'}}).pretty()
 ```
 #### 7.get all movies released in the 90s
 ```sql
-
+db.movies.find({$and:[{"year":{$gte:1900}},{"year":{$lte:1999}} ]}).pretty()
 ```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e46ecb79af652b10b769"),
+        "title" : "Fight Club",
+        "writer" : "Chuck Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c43e77ecb79af652b10b76a"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+```
+
 
  
 
