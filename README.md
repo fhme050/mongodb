@@ -292,6 +292,88 @@ result
         ]
 }
 ```
+#### 12.find all movies that have a synopsis that contains the word "Bilbo"
+```sql
+> db.movies.find({"synopsis":{$regex:'Bilbo.*'}}).pretty()
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e82bcb79af652b10b76b"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+{
+        "_id" : ObjectId("5c43e8eecb79af652b10b76c"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c43ea59cb79af652b10b76d"),
+        "title" : "The Hobbit: The Battle of the Five Armies",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+```
+#### 13.find all movies that have a synopsis that contains the word "Gandalf"
+```sql
+ db.movies.find({"synopsis":{$regex:'Gandalf.*'}}).pretty()
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e8eecb79af652b10b76c"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+```
+#### 16.find all movies that have a synopsis that contains the word "gold" and "dragon"
+```sql
+db.movies.find({$and:[{"synopsis":{$regex:'gold.*'}},{"synopsis":{$regex:'dragon.*'}} ]}).pretty()
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e82bcb79af652b10b76b"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+```
+#### 17.delete the movie "Pee Wee Herman's Big Adventure"
+```sql
+db.movies.remove({"_id" : ObjectId("5c43eb0dcb79af652b10b76f")})
+```
+result
+```sql
+WriteResult({ "nRemoved" : 1 })
+```
+#### 18.delete the movie "Avatar"
+```sql
+db.movies.remove({"_id" : ObjectId("5c43eb3fcb79af652b10b770")})
+```
+result
+```sql
+WriteResult({ "nRemoved" : 1 })
+```
+
+
+
+
+
   
 
 
