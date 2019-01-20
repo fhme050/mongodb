@@ -241,6 +241,38 @@ result
         "year" : 2012,
         "franchise" : "The Hobbit",
         "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+#### 9.add a synopsis to "The Hobbit: An Unexpected Journey"   
+```sql
+ db.movies.update({ "_id" : ObjectId("5c43e82bcb79af652b10b76b")},{"title":"The Hobbit: An Unexpected Journey","writer":"J.R.R. Tolkein","year":2012,"franchise":"The Hobbit","synopsis":"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."})
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e82bcb79af652b10b76b"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
+}
+```
+#### 10.add a synopsis to "The Hobbit: The Desolation of Smaug"   
+```sql
+  db.movies.update({ "_id" : ObjectId("5c43e8eecb79af652b10b76c")},{"title":"The Hobbit: The Desolation of Smaug","writer":"J.R.R. Tolkein","year":2013,"franchise":"The Hobbit","synopsis":"The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+```
+result
+```sql
+{
+        "_id" : ObjectId("5c43e8eecb79af652b10b76c"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
+}
+```
+ 
 
 
 
